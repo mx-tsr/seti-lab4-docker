@@ -17,7 +17,7 @@
 - В качестве простого приложения решено написать сайт, на котором отображается база данных пользователей:
 логин пользователя и его пароль (все максимально безопасно, конечно же 🙂).
 
-- Написано приложение на python с использованием фреймворка Flask. На странице можно удалить запись из таблицы, а также 
+- Написано приложение на Python с использованием фреймворка Flask. На странице можно удалить запись из таблицы, а также 
 добавить новую запись. В качестве ORM используется SQLAlchemy, диалект БД - Postgres. Представлено в файлах app.py,
 index.html и styles.css.
 
@@ -152,3 +152,26 @@ docker ps
 ![alt text](https://github.com/mx-tsr/seti-lab4-docker/blob/main/docker/3.png)
 
 ![alt text](https://github.com/mx-tsr/seti-lab4-docker/blob/main/docker/4.png)
+
+```
+flask_app  |  * Running on all addresses (0.0.0.0)
+flask_app  |  * Running on http://127.0.0.1:8000
+flask_app  |  * Running on http://10.137.1.3:8000
+flask_app  | Press CTRL+C to quit
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:14:07] "POST /create HTTP/1.1" 302 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:14:07] "GET / HTTP/1.1" 200 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:14:07] "GET /static/css/styles.css HTTP/1.1" 304 -
+flask_app  | /docker_app/app.py:41: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+flask_app  |   user = User.query.get(int(userID))
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:14:22] "POST /delete HTTP/1.1" 302 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:14:22] "GET / HTTP/1.1" 200 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:14:22] "GET /static/css/styles.css HTTP/1.1" 304 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:14:38] "POST /create HTTP/1.1" 302 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:14:38] "GET / HTTP/1.1" 200 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:14:38] "GET /static/css/styles.css HTTP/1.1" 304 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:15:00] "POST /delete HTTP/1.1" 302 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:15:00] "GET / HTTP/1.1" 200 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:15:00] "GET /static/css/styles.css HTTP/1.1" 304 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:21:45] "GET / HTTP/1.1" 200 -
+flask_app  | 10.137.1.1 - - [20/Dec/2024 18:21:45] "GET /static/css/styles.css HTTP/1.1" 304 -
+```
