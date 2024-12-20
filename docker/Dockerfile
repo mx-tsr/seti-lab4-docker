@@ -9,10 +9,11 @@ COPY requirements.txt requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Добавляем непривилегированного пользователя
-#RUN addgroup -S mx_tsr && adduser -S --ingroup mx_tsr --disabled-password mx_tsr
-#USER mx_tsr
 RUN addgroup -S mx_tsr && adduser -S mx_tsr -G mx_tsr
 USER mx_tsr
+
+# Очищение кэша если это не было выполнено ранее
+RUN rm -rf /var/cache/apk/*
 
 # Копируем исходный код приложения
 COPY ./src .

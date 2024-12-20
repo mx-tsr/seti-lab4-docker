@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for  # для сервера
-from flask_sqlalchemy import SQLAlchemy  # для ORM и миграций
+from flask_sqlalchemy import SQLAlchemy  # для ORM
 from flask_migrate import Migrate
 from config import Config
 
