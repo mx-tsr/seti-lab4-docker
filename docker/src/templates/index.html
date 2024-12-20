@@ -1,0 +1,45 @@
+<html lang="ru">
+  <head>
+    <title>Докер</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+  </head>
+
+  <body>
+    <h1>Простая База Данных</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Логин</th>
+          <th>Пароль</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for user in data %}
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.password }}</td>
+          <td>
+            <form action="/delete" method="post">
+              <input type="hidden" name="id" value="{{ user.id }}">
+              <input type="submit" value="Удалить">
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2>Добавить пользователя</h2>
+    <form action="/create" method="post">
+      <label>
+        <input type="text" name="name" placeholder="Логин" required>
+      </label>
+      <label>
+        <input type="text" name="password" placeholder="Пароль" required>
+      </label>
+      <input type="submit" value="Создать">
+    </form>
+  </body>
+</html>
