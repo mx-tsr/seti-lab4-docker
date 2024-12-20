@@ -140,15 +140,15 @@ docker compose up --build -d
 ```
 docker ps
 ```
-![alt text](https://github.com/mx-tsr/seti-lab4-docker/blob/main/1.png?raw=true)
+![alt text](https://github.com/mx-tsr/seti-lab4-docker/blob/main/docker/1.png)
 
 7. Вес образа
 - После сборки вес образа составляет: 153MB
 
 8. Демонстрация работы
 
-![alt text](https://github.com/mx-tsr/seti-lab4-docker/blob/main/2.png?raw=true)
+![alt text](https://github.com/mx-tsr/seti-lab4-docker/blob/main/docker/2.png)
 
-![alt text](https://github.com/mx-tsr/seti-lab4-docker/blob/main/3.png?raw=true)
+![alt text](https://github.com/mx-tsr/seti-lab4-docker/blob/main/docker/3.png)
 
-![alt text](https://github.com/mx-tsr/seti-lab4-docker/blob/main/4.png?raw=true)
+![alt text](https://github.com/mx-tsr/seti-lab4-docker/blob/main/docker/4.png)
